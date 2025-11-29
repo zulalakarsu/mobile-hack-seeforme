@@ -21,7 +21,7 @@
 
 **SeeForMe** addresses these barriers by providing instant, offline, accessible scene understanding.
 
-<img width="300" height="600" alt="Image" src="https://github.com/user-attachments/assets/4277525a-ecc7-4569-84f5-02d2b914c0e0" />
+<img width="200" height="500" alt="Image" src="https://github.com/user-attachments/assets/4277525a-ecc7-4569-84f5-02d2b914c0e0" />
 
 ## ✨ Key Features
 
