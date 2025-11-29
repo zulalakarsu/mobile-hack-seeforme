@@ -6,9 +6,12 @@
 
 ## 🌟 Overview
 
-**SeeForMe** is a revolutionary mobile application designed specifically for visually impaired users, providing real-time AI-powered scene description through advanced computer vision and text-to-speech technology. By simply pointing their phone's camera at any object or scene, users receive detailed, natural language descriptions spoken aloud, enabling greater independence and environmental awareness.
-
-> *"Technology that sees for you, speaks to you, and empowers your independence"*
+**SeeForMe** is an AI-powered visual assistant for the visually impaired that runs entirely on your device — no internet required, no data ever leaves your phone.
+Simply point your camera at anything. SeeForMe instantly describes what it sees in natural, spoken language — helping you navigate the world with confidence and independence.
+🔒 Privacy-First: All AI processing happens on-device. Your camera feed is never uploaded, stored, or shared. Ever.
+📴 Works Offline: No WiFi? No problem. SeeForMe works anywhere — on planes, in subways, or remote areas with zero connectivity.
+⚡ Instant Results: Powered by on-device AI (Cactus), get real-time scene descriptions in seconds.
+**Your world, described. Your privacy, protected.**
 
 ## 🎯 Problem Statement
 
@@ -34,7 +37,6 @@
 ### 🔊 **Intelligent Text-to-Speech**
 - **Premium Voice Quality**: Natural-sounding, clear speech synthesis
 - **Smart Controls**: Play, pause, replay with large touch targets
-- **Multi-language Support**: 15+ languages with regional accents
 - **Audio Management**: Automatic stopping on new scans
 
 ### 📱 **Accessibility-First Design**
