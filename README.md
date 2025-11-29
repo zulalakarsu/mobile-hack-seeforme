@@ -8,9 +8,10 @@
 
 **SeeForMe** is an AI-powered visual assistant for the visually impaired that runs entirely on your device — no internet required, no data ever leaves your phone.
 Simply point your camera at anything. SeeForMe instantly describes what it sees in natural, spoken language — helping you navigate the world with confidence and independence.
-🔒 Privacy-First: All AI processing happens on-device. Your camera feed is never uploaded, stored, or shared. Ever.
-📴 Works Offline: No WiFi? No problem. SeeForMe works anywhere — on planes, in subways, or remote areas with zero connectivity.
-⚡ Instant Results: Powered by on-device AI (Cactus), get real-time scene descriptions in seconds.
+
+- 🔒 Privacy-First: All AI processing happens on-device. Your camera feed is never uploaded, stored, or shared. Ever.
+- 📴 Works Offline: No WiFi? No problem. SeeForMe works anywhere — on planes, in subways, or remote areas with zero connectivity.
+- ⚡ Instant Results: Powered by on-device AI (Cactus), get real-time scene descriptions in seconds.
 **Your world, described. Your privacy, protected.**
 
 ## 🎯 Problem Statement
