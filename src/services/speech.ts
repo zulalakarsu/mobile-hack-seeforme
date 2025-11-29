@@ -45,17 +45,63 @@ export const speak = async (text: string, language: string = 'English'): Promise
       delete voiceOptions.language; // Let system choose
     }
     
-    await Speech.speak(text, voiceOptions);
+    // Use promise-based approach with timeout
+    return new Promise<void>((resolve, reject) => {
+      let resolved = false;
+      
+      // Safety timeout - speech shouldn't take more than 2 minutes
+      const timeout = setTimeout(() => {
+        if (!resolved) {
+          resolved = true;
+          console.log('Speech timed out, assuming completion');
+          resolve();
+        }
+      }, 120000);
+      
+      Speech.speak(text, {
+        ...voiceOptions,
+        onDone: () => {
+          if (!resolved) {
+            resolved = true;
+            clearTimeout(timeout);
+            console.log('Speech completed successfully');
+            resolve();
+          }
+        },
+        onError: (error) => {
+          if (!resolved) {
+            resolved = true;
+            clearTimeout(timeout);
+            console.error('Speech error during playback:', error);
+            reject(error);
+          }
+        }
+      });
+      
+      // Log start of speech
+      console.log('Speech started with text length:', text.length);
+    });
     
   } catch (error) {
     console.error('Speech error:', error);
     
     // Fallback: try with minimal options
     try {
-      await Speech.speak(text, { rate: 0.8 });
-      console.log('Fallback speech succeeded');
+      return new Promise<void>((resolve, reject) => {
+        Speech.speak(text, {
+          rate: 0.8,
+          onDone: () => {
+            console.log('Fallback speech succeeded');
+            resolve();
+          },
+          onError: (fallbackError) => {
+            console.error('Fallback speech failed:', fallbackError);
+            reject(new Error('Speech service unavailable'));
+          }
+        });
+      });
     } catch (fallbackError) {
-      console.error('Fallback speech failed:', fallbackError);
+      console.error('Fallback speech setup failed:', fallbackError);
       throw new Error('Speech service unavailable');
     }
   }

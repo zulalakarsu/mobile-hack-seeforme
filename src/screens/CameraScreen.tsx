@@ -96,6 +96,8 @@ export default function CameraScreen() {
         setDescription(result.description);
         setHasScanned(true);
         console.log('New description ready, previous audio stopped');
+        console.log('hasScanned:', true);
+        console.log('description:', result.description.substring(0, 50) + '...');
       }
       
     } catch (error) {
@@ -214,19 +216,20 @@ export default function CameraScreen() {
           </TouchableOpacity>
         </View>
 
+
         {/* Results Overlay - Show when description is available */}
-        {hasScanned && description ? (
+        {description ? (
           <View style={styles.resultsOverlay}>
             {/* Description Card */}
-            <View style={styles.descriptionCard}>
-              <ScrollView 
-                style={styles.descriptionScroll}
-                showsVerticalScrollIndicator={false}
-                contentContainerStyle={styles.descriptionScrollContent}
-              >
-                <Text style={styles.descriptionText}>{description}</Text>
-              </ScrollView>
-            </View>
+            <ScrollView 
+              style={styles.descriptionCard}
+              showsVerticalScrollIndicator={true}
+              contentContainerStyle={styles.descriptionScrollContent}
+            >
+              <Text style={styles.descriptionText}>
+                {description || 'No description available'}
+              </Text>
+            </ScrollView>
 
             {/* Action Buttons */}
             <View style={styles.actionButtonsOverlay}>
@@ -386,11 +389,10 @@ const styles = StyleSheet.create({
     shadowRadius: 12,
   },
   descriptionScroll: {
-    flex: 1,
+    maxHeight: height * 0.3,
   },
   descriptionScrollContent: {
-    flexGrow: 1,
-    justifyContent: 'center',
+    paddingVertical: 10,
   },
   descriptionText: {
     fontSize: 20,
