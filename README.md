@@ -54,7 +54,7 @@
 
 ```bash
 # Clone repository
-git clone https://github.com/yourusername/seeformen-app.git
+git clone https://github.com/zulalakarsu/seeforme.git
 cd seeformen-app
 
 # Install dependencies
